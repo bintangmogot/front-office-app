@@ -51,10 +51,10 @@ export function renderTodo() {
 
       <div id="todo-list"></div>
 
-      <div class="mt-6 border-t-3 border-black pt-4">
+      <div class="mt-6 border-t-3 border-black pt-4 bg-white">
         <p class="text-sm mb-2 font-bold uppercase">ADD CUSTOM TASK</p>
         <div class="flex gap-2">
-          <input type="text" id="new-task-input" placeholder="Type new task..." class="input input-bordered flex-1 border-2 border-black" />
+          <input type="text" id="new-task-input" placeholder="Type new task..." class="input input-bordered flex-1 border-2 border-black bg-white" />
           <button class="btn btn-neutral" id="add-task-btn">ADD</button>
         </div>
       </div>
@@ -97,8 +97,10 @@ export function initTodo() {
       todos.forEach(todo => {
         html += `
           <div class="todo-item ${todo.checked ? 'checked' : ''}" data-id="${todo.id}">
-            <input type="checkbox" class="checkbox checkbox-sm border-2 border-black" ${todo.checked ? 'checked' : ''} data-id="${todo.id}" data-type="default" />
-            <label>${todo.text}</label>
+            <label class="flex-1 flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" class="checkbox checkbox-sm border-2 border-black text-black bg-transparent" ${todo.checked ? 'checked' : ''} data-id="${todo.id}" data-type="default" />
+              <span>${todo.text}</span>
+            </label>
           </div>
         `
       })
@@ -113,8 +115,10 @@ export function initTodo() {
       customs.forEach(todo => {
         html += `
           <div class="todo-item ${todo.checked ? 'checked' : ''}" data-id="${todo.id}">
-            <input type="checkbox" class="checkbox checkbox-sm border-2 border-black" ${todo.checked ? 'checked' : ''} data-id="${todo.id}" data-type="custom" />
-            <label>${todo.text}</label>
+            <label class="flex-1 flex items-center gap-3 cursor-pointer">
+              <input type="checkbox" class="checkbox checkbox-sm border-2 border-black" ${todo.checked ? 'checked' : ''} data-id="${todo.id}" data-type="custom" />
+              <span>${todo.text}</span>
+            </label>
             <button class="todo-delete" data-id="${todo.id}">DEL</button>
           </div>
         `
