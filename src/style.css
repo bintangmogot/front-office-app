@@ -363,6 +363,59 @@ h1, h2, h3, h4, h5, h6 {
   color: #FFFFFF;
 }
 
+/* ==================== INFO GRID ==================== */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0;
+}
+
+.article-content h2 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.article-content h3 {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.article-content p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.article-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.article-content ul li {
+  padding: 0.4rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.article-content ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #000000;
+}
+
 /* ==================== RESPONSIVE ==================== */
 
 @media (max-width: 768px) {

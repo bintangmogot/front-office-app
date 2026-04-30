@@ -3,7 +3,7 @@ import { renderNav } from './components/nav.js'
 import { renderFooter } from './components/footer.js'
 import { renderHome } from './pages/home.js'
 import { renderTodo, initTodo } from './pages/todo.js'
-import { renderInfoHub } from './pages/info-hub.js'
+import { renderInfoHub, initInfoHub } from './pages/info-hub.js'
 import { renderInfoArticle } from './pages/info-article.js'
 import { renderFlow, initFlow } from './pages/flow.js'
 
@@ -25,6 +25,7 @@ function router() {
     afterRender = initTodo
   } else if (route === '#/info') {
     pageContent = renderInfoHub()
+    afterRender = initInfoHub
   } else if (route.startsWith('#/info/')) {
     const id = route.replace('#/info/', '')
     pageContent = renderInfoArticle(id)
