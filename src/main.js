@@ -6,6 +6,7 @@ import { renderTodo, initTodo } from './pages/todo.js'
 import { renderInfoHub, initInfoHub } from './pages/info-hub.js'
 import { renderInfoArticle } from './pages/info-article.js'
 import { renderFlow, initFlow } from './pages/flow.js'
+import { renderReminder, initReminder } from './pages/reminder.js'
 
 const app = document.getElementById('app')
 
@@ -32,6 +33,9 @@ function router() {
   } else if (route === '#/flow') {
     pageContent = renderFlow()
     afterRender = initFlow
+  } else if (route === '#/reminder') {
+    pageContent = renderReminder()
+    afterRender = initReminder
   } else {
     pageContent = `
       <div class="page-container flex flex-col items-center justify-center min-h-[60vh] text-center">

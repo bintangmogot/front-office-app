@@ -19,16 +19,10 @@ export function renderHome() {
       enabled: true,
     },
     {
-      title: 'DASHBOARD',
-      desc: 'Class list, participants, input data, team',
-      hash: null,
-      enabled: false,
-    },
-    {
       title: 'REMINDER',
       desc: 'Events, classes, and important dates',
-      hash: null,
-      enabled: false,
+      hash: '#/reminder',
+      enabled: true,
     },
   ]
 
@@ -52,7 +46,7 @@ export function renderHome() {
   }).join('')
 
   return `
-    <div class="home-grid">
+    <div class="home-grid grid grid-cols-1 md:grid-cols-2">
       ${cardsHTML}
     </div>
   `

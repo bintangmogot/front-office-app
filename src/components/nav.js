@@ -4,6 +4,7 @@ export function renderNav(currentRoute) {
     { label: 'TO-DO', hash: '#/todo' },
     { label: 'INFO', hash: '#/info' },
     { label: 'FLOW', hash: '#/flow' },
+    { label: 'REMINDER', hash: '#/reminder' },
   ]
 
   const navLinks = links.map(link => {
