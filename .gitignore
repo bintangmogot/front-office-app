@@ -1,10 +1,10 @@
 node_modules/
 dist/
-.next/
 .env
 .env.local
 .env.production
 *.log
 .DS_Store
 Thumbs.db
+.vercel
 .agents/mcp_config.json

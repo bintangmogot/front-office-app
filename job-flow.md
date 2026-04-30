@@ -151,6 +151,12 @@ first page is only showing 3-4 big cards for each feature:
 - to do list
 - reminder
 
+set this project to has an mvp, which means start simple and simple. focus on the main features and make it as simple as possible, but yet still functional and easy to use. and then we can add more features later. Make other card that still not functional as coming soon. and also write the plan for the next features on the notes section. 
+publish to vercel and make it as a real website since the mvp.
+there is no account, but make it has a save data, when i refresh the page, the data is still there.
+the website should be access in mobile phone and pc. make it responsive for both.
+make it simple and easy to use. 
+
 my team are:
 - me (bintang)
 - tyas
@@ -159,4 +165,4 @@ my team are:
 - maria
 - anggun
 
-and for all the information i gave you is real and based on my job and daily life as a front desk or front office for obsidian fitness studio, you can find that in job-flow.md file.
+and for all the information i gave you is real and based on my job and daily life as a front desk or front office for obsidian fitness studio, you can find that in job-flow.md file. and lastly, use ai generator for the images for dummy contents. give me many questions if you need to.

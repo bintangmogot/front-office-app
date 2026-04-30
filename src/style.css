@@ -1,0 +1,396 @@
+@import "tailwindcss";
+
+/* Register daisyUI */
+@plugin "daisyui";
+
+/* Custom obsidian theme */
+@plugin "daisyui/theme" {
+  name: "obsidian";
+  default: true;
+  color-scheme: light;
+
+  --color-base-100: #FFFFFF;
+  --color-base-200: #F5F5F5;
+  --color-base-300: #E0E0E0;
+  --color-base-content: #000000;
+  --color-primary: #E53935;
+  --color-primary-content: #FFFFFF;
+  --color-secondary: #000000;
+  --color-secondary-content: #FFFFFF;
+  --color-accent: #E53935;
+  --color-accent-content: #FFFFFF;
+  --color-neutral: #000000;
+  --color-neutral-content: #FFFFFF;
+  --color-info: #000000;
+  --color-success: #000000;
+  --color-warning: #000000;
+  --color-error: #E53935;
+
+  --radius-selector: 0;
+  --radius-field: 0;
+  --radius-box: 0;
+  --border: 2px;
+}
+
+/* ==================== CUSTOM THEME TOKENS ==================== */
+@theme {
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body: 'Nanum Gothic', sans-serif;
+}
+
+/* ==================== GLOBAL RESETS ==================== */
+* {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+  background-color: #FFFFFF;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Archivo Black', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* ==================== COMPONENT OVERRIDES ==================== */
+
+.btn {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-width: 2px;
+}
+
+.card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 3px solid #000000;
+}
+
+.input {
+  border-radius: 0 !important;
+  border-width: 2px;
+  font-weight: 700;
+}
+
+.checkbox {
+  border-radius: 0 !important;
+  border-width: 2px;
+}
+
+.tab {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 0 !important;
+}
+
+.modal-box {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: 3px solid #000000;
+}
+
+.badge {
+  border-radius: 0 !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ==================== NAV ==================== */
+
+.nav-bar {
+  border-bottom: 3px solid #000000;
+  background: #FFFFFF;
+}
+
+.nav-link {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  transition: color 0.15s ease;
+  font-size: 0.8rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #E53935;
+}
+
+.nav-link.active {
+  border-bottom: 3px solid #E53935;
+}
+
+/* ==================== HOME GRID ==================== */
+
+.home-grid {
+  display: grid;
+  min-height: calc(100vh - 60px);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.home-grid > :nth-child(1) { grid-column: 1; grid-row: 1; }
+.home-grid > :nth-child(2) { grid-column: 2; grid-row: 1; }
+.home-grid > :nth-child(3) { grid-column: 1; grid-row: 2; }
+.home-grid > :nth-child(4) { grid-column: 2; grid-row: 2; }
+.home-grid > :nth-child(5) { grid-column: 1 / -1; grid-row: 3; }
+
+@media (min-width: 769px) {
+  .home-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    min-height: calc(100vh - 60px);
+  }
+  .home-grid > :nth-child(1) { grid-column: 1; grid-row: 1; }
+  .home-grid > :nth-child(2) { grid-column: 2; grid-row: 1; }
+  .home-grid > :nth-child(3) { grid-column: 3; grid-row: 1; }
+  .home-grid > :nth-child(4) { grid-column: 1 / span 1; grid-row: 2; }
+  .home-grid > :nth-child(5) { grid-column: 2 / span 2; grid-row: 2; }
+}
+
+/* ==================== HOME CARDS ==================== */
+
+.home-card {
+  border: 3px solid #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+  color: #000000;
+  min-height: 200px;
+}
+
+.home-card:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.home-card.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #F5F5F5;
+}
+
+.home-card-title {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.home-card-desc {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  opacity: 0.6;
+  max-width: 300px;
+}
+
+.home-card-badge {
+  background-color: #E53935;
+  color: #FFFFFF;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.75rem;
+}
+
+/* ==================== FLOW TIMELINE ==================== */
+
+.flow-node {
+  position: relative;
+  padding: 1.25rem 1.5rem;
+  padding-left: 3rem;
+  border: 2px solid #000000;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.flow-node:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.flow-node::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #000000;
+}
+
+.flow-node:hover::before {
+  background-color: #E53935;
+}
+
+.flow-line {
+  width: 3px;
+  height: 1.5rem;
+  background-color: #000000;
+  margin-left: calc(1rem + 5px);
+}
+
+/* ==================== ARTICLE CARDS ==================== */
+
+.article-card {
+  border: 3px solid #000000;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  overflow: hidden;
+  text-decoration: none;
+  color: #000000;
+  display: block;
+}
+
+.article-card:hover {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.article-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #000000;
+}
+
+/* ==================== PAGE LAYOUT ==================== */
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.page-header {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 3px solid #000000;
+  padding-bottom: 0.75rem;
+}
+
+/* ==================== TODO ==================== */
+
+.shift-tab {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border: 2px solid #000000;
+  background: transparent;
+  color: #000000;
+  font-family: 'Nanum Gothic', sans-serif;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.shift-tab:hover {
+  background-color: #F5F5F5;
+}
+
+.shift-tab.active {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #E0E0E0;
+  font-weight: 700;
+}
+
+.todo-item label {
+  cursor: pointer;
+  flex: 1;
+}
+
+.todo-item.checked label {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo-delete {
+  background: none;
+  border: 2px solid #E53935;
+  color: #E53935;
+  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.7rem;
+  cursor: pointer;
+  font-family: 'Nanum Gothic', sans-serif;
+  text-transform: uppercase;
+}
+
+.todo-delete:hover {
+  background-color: #E53935;
+  color: #FFFFFF;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: auto;
+  }
+
+  .home-grid > * {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  .home-card {
+    min-height: 140px;
+  }
+
+  .home-card-title {
+    font-size: clamp(1.4rem, 7vw, 2.2rem);
+  }
+
+  .page-container {
+    padding: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.7rem;
+  }
+}
